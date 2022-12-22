@@ -15,7 +15,7 @@ jobs:
           command: yarn run build
       - aws-s3/sync:
           from: dist
-          to: 's3:kidclampdown.com'
+          to: 's3://kidclampdown.com'
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           aws-region: AWS_REGION
