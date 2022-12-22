@@ -7,7 +7,7 @@ jobs:
     - node/install:
         install-yarn: true
         node-version: '18.9.0'
-        run: yarn run build
+    - run: yarn run build
     - run: node --version
 
 workflows:
