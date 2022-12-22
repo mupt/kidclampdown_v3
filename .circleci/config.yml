@@ -8,11 +8,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Yarn Install
+          name: Install Dependencies
           command: yarn install
       - run:
-          name: Install Dependencies
+          name: Install build
           command: yarn run build
+      - run:
+          name: Run Tests
+          command: yarn test
+
 workflows:
   build:
     jobs:
