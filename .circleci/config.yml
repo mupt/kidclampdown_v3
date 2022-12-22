@@ -2,7 +2,7 @@ version: '2.1'
 orbs:
   aws-s3: circleci/aws-cli@3.1.1
 jobs:
-  install-node-example:
+  build-and-run:
     docker:
       - image: 'circleci/node:18.9.0'
     steps:
@@ -31,5 +31,5 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - install-node-example
+      - build-and-run
 
