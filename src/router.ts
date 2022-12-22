@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import IndexPage from '@/pages/IndexPage.vue'
+import CV from '@/pages/CV.vue'
 
 const routes = [
   {
@@ -10,6 +11,7 @@ const routes = [
       title: 'Vite + Vue + TypeScript + Tailwind Starter Template',
     },
   },
+  { path: '/cv', component: CV }
 ]
 
 const router = createRouter({

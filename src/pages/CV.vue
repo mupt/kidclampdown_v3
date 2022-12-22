@@ -1,3 +1,4 @@
+
 <script setup lang="ts">
 // useRoute, useHead, and HelloWorld are automatically imported. See vite.config.ts for details.
 const route = useRoute()
@@ -27,17 +28,14 @@ const thisYear = new Date().getFullYear()
 
 
 <template>
-  <div class="relative">
+  <div class="relative py-8">
     <div class="container relative max-w-2xl mx-auto bg-white">
-      <div class="grid md:grid-cols-2 sm:grid-cols-1 p-6">
-        <section>
-          <Nav />
-        </section>
-        <section>
-          <img src="../assets/jarrdon.jpg"/>
-          <a class="float-right text-lg" href="mailto:kidclampdown@gmail.com"> contact: kidclampdown </a>
-        </section>
-      </div>
+      <header>
+        <h1> CV </h1>
+      </header>
+      <section>
+        <Nav />
+      </section>
     </div>
   </div>
 </template>
