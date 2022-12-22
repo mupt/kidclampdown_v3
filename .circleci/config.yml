@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  node: circleci/node@x.y
+  node: circleci/node@18.9.0
 jobs:
   install-node-example:
     docker:
@@ -9,7 +9,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '16.13'
+          node-version: '18.9.0"
       - run: node --version
 workflows:
   test_my_app:
