@@ -11,6 +11,7 @@ jobs:
           install-yarn: true
           node-version: '18.9.0'
       - run: node --version
+      - run: yarn run build
 workflows:
   test_my_app:
     jobs:
