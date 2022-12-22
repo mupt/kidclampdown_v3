@@ -2,8 +2,6 @@ version: '2.1'
 orbs:
   node: circleci/node@18.9.0
 jobs:
-  executor:
-    name: node/default
   steps:
     - checkout
     - node/install:
