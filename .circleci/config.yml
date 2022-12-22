@@ -3,7 +3,7 @@ orbs:
   node: circleci/node@5.0.3
   aws-s3: circleci/aws-cli@3.1
 jobs:
-  build_and_deploy:
+  build-and-deploy:
     docker:
       - image: 'cimg/base:stable'
     steps:
@@ -33,7 +33,7 @@ jobs:
           arguments: |
             --recursive
 workflows:
-  build_and_deploy:
+  build-and-deploy:
     jobs:
       - build-and-deploy
 
