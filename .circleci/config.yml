@@ -1,16 +1,18 @@
 version: '2.1'
 orbs:
-  node: circleci/node@18.9.0
+  node: circleci/node@x.y
 jobs:
-  steps:
-    - checkout
-    - node/install:
-        install-yarn: true
-        node-version: '18.9.0'
-    - run: yarn run build
-    - run: node --version
-
+  install-node-example:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
 workflows:
-  build-and-test:
+  test_my_app:
     jobs:
-      - build-and-test
+      - install-node-example
+
