@@ -13,9 +13,6 @@
       <li>
         <a class="text-lg" href="https://www.contrado.com/stores/dwshop"> clothing </a>
       </li>
-      <li>
-        <router-link class="text-lg" to="/cv">cv</router-link>
-      </li>
     </ol>
   </nav>
 </template>

@@ -8,7 +8,7 @@ const routes = [
     path: '/',
     component: IndexPage,
     meta: {
-      title: 'Vite + Vue + TypeScript + Tailwind Starter Template',
+      title: 'kidclampdown',
     },
   },
   { path: '/cv', component: CV }
