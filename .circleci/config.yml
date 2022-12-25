@@ -39,14 +39,12 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: bucket
+          from: dist/.
           to: 's3://stage.kdc'
       - aws-s3/copy:
-          arguments: '--dryrun'
-          from: bucket/build_asset.txt
+          from: dist/.
           to: 's3://stage.kdc'
