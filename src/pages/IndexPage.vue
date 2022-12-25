@@ -35,7 +35,7 @@ const thisYear = new Date().getFullYear()
         </section>
         <section>
           <img src="../assets/jarrdon.jpg"/>
-          <a class="float-right text-lg" href="mailto:kidclampdown@gmail.com"> contact: kidclampdown </a>
+          <a class="float-right text-lg" href="mailto:kidclampdown@gmail.com"> contact: kidclampdown@gmail.com </a>
         </section>
       </div>
     </div>

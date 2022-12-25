@@ -1,6 +1,18 @@
 version: '2.1'
 orbs:
   aws-s3: circleci/aws-cli@3.1.4
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            -build
+          filters:
+          branches:
+            only: main
+
 jobs:
   build:
     docker:
@@ -16,9 +28,11 @@ jobs:
       - run:
           name: Install build
           command: yarn run build
-
-workflows:
-  build:
-    jobs:
-      - build
-
+  deploy:
+    steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync <path/to/bucket> <s3://location/in/S3-to-deploy-to>
