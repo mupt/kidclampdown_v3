@@ -7,11 +7,10 @@ workflows:
   jobs:
     - build
     - deploy:
-      requires:
-      - build
-      filters:
-      branches:
-        only: main # Only deploys when the commit is on the Main branchjobs:
+        requires:
+        - build
+        branches:
+          only: main # Only deploys when the commit is on the Main branchjobs:
 
 
 jobs:
