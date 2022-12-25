@@ -38,6 +38,18 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
     steps:
-      - run:
-          name: Deploy to S3
-          command: aws s3 sync <path/to/bucket> <s3://location/in/S3-to-deploy-to>
+      - checkout
+      - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
+      - aws-s3/sync:
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400"
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: bucket
+          to: 's3://stage.kdc'
+      - aws-s3/copy:
+          arguments: '--dryrun'
+          from: bucket/build_asset.txt
+          to: 's3://stage.kdc'
