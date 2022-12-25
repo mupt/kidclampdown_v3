@@ -15,6 +15,7 @@ workflows:
 
 jobs:
   build:
+    working_directory: ~/repo
     docker:
       - image: 'cimg/node:18.9.0'
         auth:
@@ -32,6 +33,7 @@ jobs:
           name: Install build
           command: yarn run build
   deploy:
+    working_directory: ~/repo
     docker:
       - image: 'cimg/node:18.9.0'
         auth:
@@ -43,8 +45,8 @@ jobs:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: dist/.
+          from: ~/repo/dist/.
           to: 's3://stage.kdc'
       - aws-s3/copy:
-          from: dist/.
+          from: ~/repo/dist/.
           to: 's3://stage.kdc'
