@@ -4,14 +4,14 @@ orbs:
 
 workflows:
   build-deploy:
-    jobs:
+  jobs:
+    - build
+    - deploy:
+      requires:
       - build
-      - deploy:
-        requires:
-        - build
-        filters:
-        branches:
-          only: main # Only deploys when the commit is on the Main branchjobs:
+      filters:
+      branches:
+        only: main # Only deploys when the commit is on the Main branchjobs:
   build:
     docker:
       - image: 'cimg/node:18.9.0'
