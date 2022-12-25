@@ -27,9 +27,6 @@ jobs:
           command: yarn install
       - run:
           name: Run Tests
-          name: Test build
-          command: mkdir bucket && echo "lorem ipsum" > bucket/build_assets.txt
-      - aws-s3/sync
           command: yarn test
       - run:
           name: Install build
