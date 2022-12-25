@@ -39,8 +39,5 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - run:
-          name: Install awscli
-          command: sudo pip install awscli
-      - run:
           name: Deploy to S3
           command: aws s3 sync <path/to/bucket> <s3://location/in/S3-to-deploy-to>
