@@ -45,8 +45,8 @@ jobs:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: ~/repo/dist/.
+          from: ~/repo/dist/
           to: 's3://stage.kdc'
       - aws-s3/copy:
-          from: ~/repo/dist/.
+          from: ~/repo/dist/
           to: 's3://stage.kdc'
