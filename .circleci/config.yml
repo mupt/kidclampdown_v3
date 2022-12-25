@@ -12,6 +12,9 @@ workflows:
       filters:
       branches:
         only: main # Only deploys when the commit is on the Main branchjobs:
+
+
+jobs:
   build:
     docker:
       - image: 'cimg/node:18.9.0'
