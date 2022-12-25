@@ -32,6 +32,11 @@ jobs:
           name: Install build
           command: yarn run build
   deploy:
+    docker:
+      - image: 'cimg/node:18.9.0'
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - run:
           name: Install awscli
