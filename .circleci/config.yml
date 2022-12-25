@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  aws-s3: circleci/aws-cli@3.1.4
+  aws-cli: circleci/aws-cli@3.1.4
 
 workflows:
   build-deploy:
@@ -12,7 +12,6 @@ workflows:
         filters:
           branches:
             only: main
-
 
 jobs:
   build:
