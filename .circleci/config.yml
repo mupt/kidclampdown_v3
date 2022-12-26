@@ -15,7 +15,6 @@ workflows:
 
 jobs:
   build:
-    working_directory: ~/repo
     docker:
       - image: 'cimg/node:18.9.0'
         auth:
@@ -37,7 +36,6 @@ jobs:
           paths:
             - 'dist'
   deploy:
-    working_directory: ~/repo
     docker:
       - image: 'cimg/node:18.9.0'
         auth:
@@ -46,13 +44,12 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - checkout
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: ~/repo/dist/
+          from: dist/
           to: 's3://stage.kdc'
       - aws-s3/copy:
-          from: ~/repo/dist/
+          from: dist/
           to: 's3://stage.kdc'
