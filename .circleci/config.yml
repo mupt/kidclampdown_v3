@@ -32,6 +32,10 @@ jobs:
       - run:
           name: Install build
           command: yarn run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - 'dist'
   deploy:
     working_directory: ~/repo
     docker:
@@ -40,6 +44,8 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
     steps:
+      - attach_workspace:
+          at: .
       - checkout
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
