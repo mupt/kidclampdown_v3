@@ -50,6 +50,6 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: dist/
           to: 's3://stage.kdc'
-      - aws-s3/copy:
-          from: dist/
-          to: 's3://stage.kdc'
+#      - aws-s3/copy:
+#          from: dist/
+#          to: 's3://stage.kdc'

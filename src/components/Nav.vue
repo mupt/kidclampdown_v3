@@ -2,7 +2,7 @@
   <nav>
     <ol>
       <li>
-        <a class="text-lg" href="https://www.instagram.com/kidclampdown/"> instagram </a>
+        <a class="text-lg" href="https://www.instagram.com/kidclampdown/"> sinstagram </a>
       </li>
       <li>
         <a class="text-lg" href="https://onecouldargue.substack.com/"> newsletter </a>
