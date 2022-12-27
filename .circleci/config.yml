@@ -26,10 +26,10 @@ jobs:
           name: Install Dependencies
           command: yarn install
       - run:
-          name: Run Tests
+          name: Tests
           command: yarn test
       - run:
-          name: Install build
+          name: Build
           command: yarn run build
       - persist_to_workspace:
           root: .
@@ -49,7 +49,4 @@ jobs:
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: dist/
-          to: 's3://stage.kdc'
-#      - aws-s3/copy:
-#          from: dist/
-#          to: 's3://stage.kdc'
+          to: AWS_S3_DESTINATION
